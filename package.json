@@ -1,16 +1,16 @@
 {
-  "version": "1.48.3",
-  "name": "@dotenvx/dotenvx",
+  "version": "2.0.0",
+  "name": "@meow-laika/dotenvx",
   "description": "a secure dotenv–from the creator of `dotenv`",
   "author": "@motdotla",
   "keywords": [
     "dotenv",
     "env"
   ],
-  "homepage": "https://github.com/dotenvx/dotenvx",
+  "homepage": "https://github.com/MurkyMeow/dotenvx",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dotenvx/dotenvx.git"
+    "url": "git+https://github.com/MurkyMeow/dotenvx.git"
   },
   "license": "BSD-3-Clause",
   "files": [
@@ -65,7 +65,6 @@
     "tap": "^21.0.1"
   },
   "publishConfig": {
-    "access": "public",
-    "provenance": true
+    "access": "public"
   }
 }
