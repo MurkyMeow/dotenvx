@@ -1,5 +1,6 @@
 const fsx = require('./../helpers/fsx')
 const path = require('path')
+const readlineSync = require('readline-sync')
 
 const TYPE_ENV = 'env'
 const TYPE_ENV_FILE = 'envFile'
@@ -11,7 +12,6 @@ const Errors = require('./../helpers/errors')
 const dotenvParse = require('./../helpers/dotenvParse')
 const parseEnvironmentFromDotenvKey = require('./../helpers/parseEnvironmentFromDotenvKey')
 const detectEncoding = require('./../helpers/detectEncoding')
-const { findPrivateKey } = require('./../helpers/findPrivateKey')
 const guessPrivateKeyName = require('./../helpers/guessPrivateKeyName')
 const determineEnvs = require('./../helpers/determineEnvs')
 
@@ -96,7 +96,7 @@ class Run {
       const src = fsx.readFileX(filepath, { encoding })
       this.readableFilepaths.add(envFilepath)
 
-      const privateKey = findPrivateKey(envFilepath, this.envKeysFilepath)
+      const privateKey = readlineSync.prompt({ hideEchoBack: true, mask: '' })
       const privateKeyName = guessPrivateKeyName(envFilepath)
       const { parsed, errors, injected, preExisted } = new Parse(src, privateKey, this.processEnv, this.overload, privateKeyName).run()
 
